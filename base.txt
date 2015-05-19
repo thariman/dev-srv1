@@ -10,12 +10,13 @@ sudo dd if=ubuntu-14.04.2-server-amd64.dmg of=/dev/rdisk2 bs=1m
 # Eject usb stick.
 
 Install 14.04.2 LTS from USB
-change /etc/apt/sources.list
-using local mirror kambing.ui.ac.id
+#change /etc/apt/sources.list
+#using local mirror kambing.ui.ac.id
+sudo sed -i "s#//us.archive.ubuntu.com#//kambing.ui.ac.id#g" /etc/apt/sources.list
+sudo sed -i "s#//security.ubuntu.com#//kambing.ui.ac.id#g" /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-reboot
 
 #update .bashrc  increase the histsize, save all the history from multiple login
 HISTCONTROL=ignoreboth:erasedups
@@ -35,3 +36,5 @@ setw -g pane-base-index 1
 set -g default-terminal "screen-256color"
 setw -g mode-keys vi
 set -g history-limit 100000
+
+sudo shutdown -r now
