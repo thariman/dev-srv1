@@ -1,0 +1,10 @@
+sudo apt-get -y install build-essential libvirt-bin libvirt-dev liblzma-dev qemu-kvm openssl libssl-dev ssh aria2
+sudo apt-get -y install byobu lm-sensors
+sudo sensors-detect
+sudo /etc/init.d/kmod start
+# start byobu
+# F9 configure status notification, toggle auto start
+# logout/login after installing qemu-kvm to make sure kvm/libvirt group take affect.
+wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+sudo dpkg -i vagrant_1.7.2_x86_64.deb 
+vagrant plugin install vagrant-libvirt
