@@ -1,5 +1,14 @@
 
 # dev-srv1
+# from my mac download the iso
+aria2c -x5 "http://releases.ubuntu.com/trusty/ubuntu-14.04.2-server-amd64.iso"
+# http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-mac-osx
+hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64 ubuntu-14.04.2-server-amd64.iso
+diskutil list #look for the usb stick mine is at disk2
+diskutil unmountDisk /dev/disk2
+sudo dd if=ubuntu-14.04.2-server-amd64.dmg of=/dev/rdisk2 bs=1m
+# Eject usb stick.
+
 Install 14.04.2 LTS from USB
 change /etc/apt/sources.list
 using local mirror kambing.ui.ac.id
