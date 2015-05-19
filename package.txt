@@ -1,5 +1,5 @@
-sudo apt-get -y install build-essential libvirt-bin libvirt-dev liblzma-dev qemu-kvm openssl libssl-dev ssh aria2
-sudo apt-get -y install byobu lm-sensors
+sudo apt-get -y install build-essential libvirt-bin libvirt-dev liblzma-dev qemu-kvm openssl libssl-dev
+sudo apt-get -y install byobu lm-sensors ssh aria2 git
 sudo sensors-detect
 sudo /etc/init.d/kmod start
 # start byobu
@@ -8,3 +8,9 @@ sudo /etc/init.d/kmod start
 wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
 sudo dpkg -i vagrant_1.7.2_x86_64.deb 
 vagrant plugin install vagrant-libvirt
+vagrant plugin install vagrant-cachier
+sudo apt-get -y install apt-cacher-ng
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get -y install ansible
