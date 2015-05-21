@@ -17,3 +17,8 @@ sudo apt-get -y install ansible
 sudo apt-get install squid-deb-proxy
 sudo service apt-cacher-ng stop  # issue with hash sum missmatch
 echo 'Acquire::http { Proxy "http://10.64.200.100:8000"; };' > /etc/apt/apt.conf.d/10mirror
+sudo apt-get -y install virtualbox
+aria2c -x5 "https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/20150512.0.1/providers/virtualbox.box"
+virtualbox add trusty64 trusty-server-cloudimg-amd64-vagrant-disk1.box
+wget http://dlc-cdn.sun.com/virtualbox/4.3.10/Oracle_VM_VirtualBox_Extension_Pack-4.3.10-93012.vbox-extpack
+sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-4.3.10-93012.vbox-extpack
