@@ -9,8 +9,11 @@ wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
 sudo dpkg -i vagrant_1.7.2_x86_64.deb 
 vagrant plugin install vagrant-libvirt
 vagrant plugin install vagrant-cachier
-sudo apt-get -y install apt-cacher-ng
+#sudo apt-get -y install apt-cacher-ng # remove
 sudo apt-get install software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get -y install ansible
+sudo apt-get install squid-deb-proxy
+sudo service apt-cacher-ng stop  # issue with hash sum missmatch
+echo 'Acquire::http { Proxy "http://10.64.200.100:8000"; };' > /etc/apt/apt.conf.d/10mirror
