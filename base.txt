@@ -12,8 +12,8 @@ sudo dd if=ubuntu-14.04.2-server-amd64.dmg of=/dev/rdisk2 bs=1m
 Install 14.04.2 LTS from USB
 #change /etc/apt/sources.list
 #using local mirror kambing.ui.ac.id
-sudo sed -i "s#//us.archive.ubuntu.com#//kambing.ui.ac.id#g" /etc/apt/sources.list
-sudo sed -i "s#//security.ubuntu.com#//kambing.ui.ac.id#g" /etc/apt/sources.list
+sudo sed -i "s#//us.archive.ubuntu.com#//buaya.klas.or.id#g" /etc/apt/sources.list
+sudo sed -i "s#//security.ubuntu.com#//buaya.klas.or.id#g" /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
