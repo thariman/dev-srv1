@@ -1,0 +1,34 @@
+#virsh stuff
+virsh list
+virsh snapshot-create-as
+virsh snapshot-list
+virsh iface-list
+virsh net-list
+virsh net-destroy
+
+#lxc stuff
+sudo lxc-ls
+sudo lxc-attach -n name
+
+
+C-r search history
+
+readline edit  M is esc for vi
+C-a beginning of line C-a a in tmux
+C-e end of line
+M-f move forward a word
+M-b move backward a word
+C-k Kill the text to end of line
+
+tmux
+
+tmux a   attach   p C-a
+ p-c new wind
+ p-w list windows
+ p-, name window
+ p-& kill window
+ p-% vertical split
+ p-" horizontal split
+p-x kill pane
+ p-d detach
+
