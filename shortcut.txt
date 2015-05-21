@@ -31,4 +31,10 @@ tmux a   attach   p C-a
  p-" horizontal split
 p-x kill pane
  p-d detach
+ 
+ #virtualbox stuff
+ 
+ vboxmanage list hostonlyifs
+ vboxmanage hostonlyif remove <name>
+ 
 
